@@ -18,7 +18,13 @@ jobs:
         run: npm install -g @zeppos/zeus-cli
       - name: Build Zepp OS package
         working-directory: WatchApp
-        run: zeus build
+        run: |
+          zeus build 2>&1 | tee zeus-build.log
+          if grep -q "\[ERROR\]" zeus-build.log; then
+            echo "Zeus zgłosił błąd"
+            exit 1
+          fi
+          find . -type f -name "*.zab" | grep -q .
       - name: Show build output
         run: find WatchApp -type f \( -name '*.zab' -o -name '*.zip' \)
       - uses: actions/upload-artifact@v4

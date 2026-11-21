@@ -1,9 +1,50 @@
 {
   "configVersion": "v3",
-  "app": {"appId": 1137605, "appName": "Voice Notes AI", "appType": "app", "version": {"code": 1, "name": "0.1.0"}, "vender": "VoiceNotesAI", "description": "Rejestrator notatek glosowych OPUS"},
-  "runtime": {"apiVersion": {"minVersion": "3.0.0", "target": "3.0.0"}},
+  "app": {
+    "appId": 1137605,
+    "appName": "Voice Notes AI",
+    "appType": "app",
+    "version": {
+      "code": 1,
+      "name": "0.1.0"
+    },
+    "vender": "VoiceNotesAI",
+    "description": "Rejestrator notatek glosowych OPUS"
+  },
+  "runtime": {
+    "apiVersion": {
+      "minVersion": "3.0.0",
+      "target": "3.0.0",
+      "compatible": "3.0.0"
+    }
+  },
   "permissions": [],
-  "targets": {"trex3": {"module": {"page": {"pages": ["pages/index"]}}, "platforms": [{"name": "T-Rex 3", "st": "r", "sr": "w480"}], "designWidth": 480}},
-  "i18n": {"pl-PL": {"appName": "Voice Notes AI"}, "en-US": {"appName": "Voice Notes AI"}},
+  "targets": {
+    "trex3": {
+      "module": {
+        "page": {
+          "pages": [
+            "pages/index"
+          ]
+        }
+      },
+      "platforms": [
+        {
+          "name": "T-Rex 3",
+          "st": "r",
+          "sr": "w480"
+        }
+      ],
+      "designWidth": 480
+    }
+  },
+  "i18n": {
+    "pl-PL": {
+      "appName": "Voice Notes AI"
+    },
+    "en-US": {
+      "appName": "Voice Notes AI"
+    }
+  },
   "defaultLanguage": "pl-PL"
 }
