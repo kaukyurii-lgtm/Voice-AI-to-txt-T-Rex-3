@@ -18,7 +18,10 @@ jobs:
           distribution: temurin
           java-version: '17'
       - name: Install Android SDK 35
-        run: sdkmanager 'platforms;android-35' 'build-tools;35.0.0'
+        run: SDKMANAGER="$(find "${ANDROID_HOME:-/usr/local/lib/android/sdk}" -type f -path '*/bin/sdkmanager' -print -quit)"
+test -n "$SDKMANAGER" || { echo "Nie znaleziono sdkmanager"; exit 1; }
+yes | "$SDKMANAGER" --licenses || true
+"$SDKMANAGER" 'platforms;android-35' 'build-tools;35.0.0'
       - name: Install Gradle
         uses: gradle/actions/setup-gradle@v4
         with:
