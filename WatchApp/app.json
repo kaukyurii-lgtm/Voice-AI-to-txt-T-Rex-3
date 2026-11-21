@@ -30,9 +30,16 @@
       },
       "platforms": [
         {
-          "name": "T-Rex 3",
-          "st": "r",
-          "sr": "w480"
+          "name": "Amazfit T-Rex 3",
+          "deviceSource": 8716544
+        },
+        {
+          "name": "Amazfit T-Rex 3",
+          "deviceSource": 8716545
+        },
+        {
+          "name": "Amazfit T-Rex 3",
+          "deviceSource": 8716547
         }
       ],
       "designWidth": 480
@@ -46,6 +53,5 @@
       "appName": "Voice Notes AI"
     }
   },
-  "defaultLanguage": "pl-PL",
-  "package": "com.voicenotesai.trex3"
+  "defaultLanguage": "pl-PL"
 }
