@@ -16,6 +16,12 @@ jobs:
           node-version: '22'
       - name: Install Zeus CLI
         run: npm install -g @zeppos/zeus-cli
+      - name: Diagnose Zepp devices
+        run: |
+          zeus --version
+          zeus device list || true
+          cat WatchApp/app.json
+
       - name: Build Zepp OS package
         working-directory: WatchApp
         run: |
