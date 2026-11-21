@@ -9,8 +9,7 @@
       "name": "0.1.0"
     },
     "vender": "VoiceNotesAI",
-    "description": "Rejestrator notatek glosowych OPUS",
-    "package": "com.voicenotesai.trex3"
+    "description": "Rejestrator notatek glosowych OPUS"
   },
   "runtime": {
     "apiVersion": {
@@ -47,5 +46,6 @@
       "appName": "Voice Notes AI"
     }
   },
-  "defaultLanguage": "pl-PL"
+  "defaultLanguage": "pl-PL",
+  "package": "com.voicenotesai.trex3"
 }
