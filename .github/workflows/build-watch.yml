@@ -25,6 +25,7 @@ jobs:
       - name: Build Zepp OS package
         working-directory: WatchApp
         run: |
+          zeus build --help
           zeus build 2>&1 | tee zeus-build.log
           if grep -q "\[ERROR\]" zeus-build.log; then
             echo "Zeus zgłosił błąd"
