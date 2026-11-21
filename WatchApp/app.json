@@ -4,6 +4,7 @@
     "appId": 1137605,
     "appName": "Voice Notes AI",
     "appType": "app",
+    "icon": "icon.png",
     "version": {
       "code": 1,
       "name": "0.1.0"

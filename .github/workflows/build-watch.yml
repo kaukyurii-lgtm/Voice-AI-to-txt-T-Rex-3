@@ -1,11 +1,20 @@
 name: Build T-Rex 3 ZAB
+
 on:
   push:
     branches: [main]
     paths:
       - 'WatchApp/**'
       - '.github/workflows/build-watch.yml'
+  pull_request:
+    paths:
+      - 'WatchApp/**'
+      - '.github/workflows/build-watch.yml'
   workflow_dispatch:
+
+permissions:
+  contents: read
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -15,29 +24,12 @@ jobs:
         with:
           node-version: '22'
       - name: Install Zeus CLI
-        run: npm install -g @zeppos/zeus-cli
-      - name: Diagnose Zepp devices
-        run: |
-          zeus --version
-          zeus device list || true
-          cat WatchApp/app.json
-
+        run: npm install -g @zeppos/zeus-cli@1.10.2
       - name: Build Zepp OS package
         working-directory: WatchApp
-        run: |
-          zeus build --help
-          zeus build --target "Amazfit T-Rex 3" 2>&1 | tee zeus-build.log
-          if grep -q "\[ERROR\]" zeus-build.log; then
-            echo "Zeus zgłosił błąd"
-            exit 1
-          fi
-          find . -type f -name "*.zab" | grep -q .
-      - name: Show build output
-        run: find WatchApp -type f \( -name '*.zab' -o -name '*.zip' \)
+        run: zeus build
       - uses: actions/upload-artifact@v4
         with:
           name: VoiceNotesAI-TREX3-build
-          path: |
-            WatchApp/**/*.zab
-            WatchApp/**/*.zip
+          path: WatchApp/dist/*.zab
           if-no-files-found: error

@@ -1,6 +1,6 @@
 # Voice Notes AI — Amazfit T-Rex 3
 
-Ten folder to **specyfikacja prototypu**, a nie działający pakiet ZAB. Przed dostarczeniem aplikacji na zegarek trzeba zweryfikować aktualne API nagrywania Zepp OS 5, uprawnienia mikrofonu, przesyłanie plików do Side Service i schemat manifestu dla modelu T-Rex 3.
+Prototyp nagrywania OPUS znajduje się w `WatchApp`. Instrukcję budowania i instalacji testowej zawiera [README repozytorium](../README.md). Poniżej opisano plan integracji z telefonem.
 
 Plan ekranów:
 - Lista nagrań
